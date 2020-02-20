@@ -32,7 +32,7 @@ def buildCompose(config) {
     edgeXBuildDocker.validate(config)
     edgex.setupNodes(config)
 
-    def _envVarMap = edgeXBuildDocker.toEnvironment(config)
+    def _envVarMap = edgeXBuildDocker.toEnvironment(config)
 
     ///////////////////////////////////////////////////////////////////////////
 
