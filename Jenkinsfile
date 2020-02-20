@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 
-buildCompose (
+buildCompose ([
     project: 'edgex-compose',
     mavenSettings: 'ci-build-images-settings',
     dockerImageName: 'edgex-compose',
@@ -23,7 +23,7 @@ buildCompose (
     dockerNexusRepo: 'snapshots',
     dockerTags: ["1.25.0"],
     releaseBranchOverride: 'compose'
-)
+])
 
 def taggedAMD64Images
 def taggedARM64Images
