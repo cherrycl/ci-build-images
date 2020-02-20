@@ -88,7 +88,7 @@ def buildCompose(config) {
                             }
                             stage ('Checkout Compose Repository') {
                                 checkout([$class: 'GitSCM',
-                                    branches: [[name: "refs/tags/${dockerTags}"]],
+                                    branches: [[name: "refs/tags/${DOCKER_CUSTOM_TAGS}"]],
                                     doGenerateSubmoduleConfigurations: false, 
                                     extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: '']], 
                                     submoduleCfg: [], 
@@ -161,7 +161,7 @@ def buildCompose(config) {
 
                             stage ('Checkout Compose Repository') {
                                 checkout([$class: 'GitSCM',
-                                    branches: [[name: "refs/tags/${dockerTags}"]],
+                                    branches: [[name: "refs/tags/${DOCKER_CUSTOM_TAGS}"]],
                                     doGenerateSubmoduleConfigurations: false, 
                                     extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: '']], 
                                     submoduleCfg: [], 
