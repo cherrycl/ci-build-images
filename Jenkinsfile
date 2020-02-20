@@ -25,6 +25,8 @@ buildCompose (
     releaseBranchOverride: 'compose'
 )
 
+def taggedAMD64Images
+def taggedARM64Images
 
 def buildCompose(config) {
     edgex.bannerMessage "[buildCompose] RAW Config: ${config}"
@@ -37,9 +39,8 @@ def buildCompose(config) {
     ///////////////////////////////////////////////////////////////////////////
 
     pipeline {
-        //agent { label edgex.mainNode(config) }
-        agent any
-
+        agent { label edgex.mainNode(config) }
+        
         options {
             timestamps()
             preserveStashes()
