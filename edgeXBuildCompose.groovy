@@ -3,7 +3,7 @@
 def taggedAMD64Images
 def taggedARM64Images
 
-def call(config) {
+def edgeXBuildCompose(config) {
     edgex.bannerMessage "[buildCompose] RAW Config: ${config}"
 
     edgeXBuildDocker.validate(config)
