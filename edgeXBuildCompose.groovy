@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 def taggedAMD64Images
 def taggedARM64Images
 
