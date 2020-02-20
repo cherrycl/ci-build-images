@@ -37,7 +37,8 @@ def buildCompose(config) {
     ///////////////////////////////////////////////////////////////////////////
 
     pipeline {
-        agent { label edgex.mainNode(config) }
+        //agent { label edgex.mainNode(config) }
+        agent any
 
         options {
             timestamps()
@@ -72,7 +73,7 @@ def buildCompose(config) {
                             beforeAgent true
                             expression { edgex.nodeExists(config, 'amd64') }
                         }
-                        // agent { label edgex.getNode(config, 'amd64') } // comment out to reuse mainNode
+                        agent { label edgex.getNode(config, 'amd64') } // comment out to reuse mainNode
                         environment {
                             ARCH = 'x86_64'
                         }
