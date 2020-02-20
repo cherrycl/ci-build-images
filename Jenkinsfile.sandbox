@@ -39,7 +39,7 @@ def buildCompose(config) {
     ///////////////////////////////////////////////////////////////////////////
 
     pipeline {
-        agent { label edgex.mainNode(config) }
+        //agent { label edgex.mainNode(config) }
         
         options {
             timestamps()
