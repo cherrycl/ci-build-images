@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 
-edgeXBuildCompose ([
+call ([
     project: 'edgex-compose',
     mavenSettings: 'ci-build-images-settings',
     dockerImageName: 'edgex-compose',
@@ -25,11 +25,10 @@ edgeXBuildCompose ([
     releaseBranchOverride: 'compose'
 ])
 
-
 def taggedAMD64Images
 def taggedARM64Images
 
-def edgeXBuildCompose(config) {
+def call(config) {
     edgex.bannerMessage "[buildCompose] RAW Config: ${config}"
 
     edgeXBuildDocker.validate(config)
