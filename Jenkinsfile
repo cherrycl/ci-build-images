@@ -89,13 +89,15 @@ def call(config) {
                                 }
                             }
                             stage ('Checkout Compose Repository') {
-                                checkout([$class: 'GitSCM',
-                                    branches: [[name: "refs/tags/${DOCKER_CUSTOM_TAGS}"]],
-                                    doGenerateSubmoduleConfigurations: false, 
-                                    extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: '']], 
-                                    submoduleCfg: [], 
-                                    userRemoteConfigs: [[url: 'https://github.com/docker/compose.git']]
-                                ])
+                                steps {
+                                    checkout([$class: 'GitSCM',
+                                        branches: [[name: "refs/tags/${DOCKER_CUSTOM_TAGS}"]],
+                                        doGenerateSubmoduleConfigurations: false,
+                                        extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: '']],
+                                        submoduleCfg: [],
+                                        userRemoteConfigs: [[url: 'https://github.com/docker/compose.git']]
+                                    ])
+                                }
                             }
 
                             stage('Docker Build') {
@@ -162,13 +164,15 @@ def call(config) {
                             }
 
                             stage ('Checkout Compose Repository') {
-                                checkout([$class: 'GitSCM',
-                                    branches: [[name: "refs/tags/${DOCKER_CUSTOM_TAGS}"]],
-                                    doGenerateSubmoduleConfigurations: false, 
-                                    extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: '']], 
-                                    submoduleCfg: [], 
-                                    userRemoteConfigs: [[url: 'https://github.com/docker/compose.git']]
-                                ])
+                                steps {
+                                    checkout([$class: 'GitSCM',
+                                        branches: [[name: "refs/tags/${DOCKER_CUSTOM_TAGS}"]],
+                                        doGenerateSubmoduleConfigurations: false,
+                                        extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: '']],
+                                        submoduleCfg: [],
+                                        userRemoteConfigs: [[url: 'https://github.com/docker/compose.git']]
+                                    ])
+                                }
                             }
 
                             stage('Docker Build') {
