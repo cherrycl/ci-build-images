@@ -21,7 +21,7 @@ call ([
     dockerImageName: 'edgex-compose',
     dockerNamespace: 'edgex-devops',
     dockerNexusRepo: 'snapshots',
-    dockerTags: ["1.25.0"],
+    dockerTags: ["1.25.4"],
     releaseBranchOverride: 'compose'
 ])
 
