@@ -54,3 +54,5 @@ RUN script/build/linux-entrypoint
 
 RUN cp /usr/local/src/compose/docker-compose-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["sh", "/usr/local/bin/docker-compose-entrypoint.sh"]
+COPY --from=docker-cli  /usr/local/bin/docker           /usr/local/bin/docker
+COPY --from=build       /usr/local/bin/docker-compose   /usr/local/bin/docker-compose
